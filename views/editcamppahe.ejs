@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1 style="text-align:center;">edit Camp</h1>
+    <div style="width:30%; margin:25px auto;">
+      <form action="/campgrounds/<%= findcamps._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+           <input class="form-control" type="text" name="camp[name]"  value="<%= findcamps.name %>"></input>
+        </div>
+        <div class="form-group">
+           <input class="form-control" type="number" name="camp[price]" min="0.5" step="0.2" value="<%= findcamps.price %>"></input>
+        </div>
+        <div class="form-group">
+           <input class="form-control" type="text" name="camp[image]"  value="<%= findcamps.image %>" ></input>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" type="text" name="camp[desc]" rows="5" id="comment"><%= findcamps.description %></textarea>
+        </div>
+        <div class="form-group">
+       <button class="btn btn-lg btn-block btn-primary">Update Camp</button>
+       </div>
+       
+     </form>
+      <a href="/campgrounds">Back to Campgrounds</a>
+    </div>
+</div>
+
+<% include partials/footer %>
